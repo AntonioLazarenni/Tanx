@@ -83,7 +83,7 @@ $custom_settings['settings'][] = array(
     'desc'        => __( 'Primary Font.', 'tanx' ),
     'type'        => 'text',
     'section'     => 'general_options',
-    'std'         => 'Montserrat'
+    'std'         => 'Muli'
     );
 $custom_settings['settings'][] = array(
     'id'          => 'secondary_font',

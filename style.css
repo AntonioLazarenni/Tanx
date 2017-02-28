@@ -15,10 +15,6 @@ Text Domain: tanx
 /* ============ GENERAL ================ */
 /* ===================================== */
 
-@import url(https://fonts.googleapis.com/css?family=Montserrat);
-@import url(https://fonts.googleapis.com/css?family=Merriweather);
-@import url('option-tree/assets/css/icomoon.css');
-
 body {
 	background: #fff;
 	font-family: Merriweather;
@@ -44,10 +40,15 @@ body {
 	width:calc(100% - 450px);
 }
 
-h1, h2, h3, h4, h5, h6 {
-	font-family:Montserrat;
+h1, h2 {
+	font-family:Muli, sans-serif;
 	font-weight: 700;
 	letter-spacing:-2px;
+}
+
+h3, h4, h5, h6 {
+	font-family:Muli, sans-serif;
+	font-weight: 700;
 }
 
 p {
@@ -228,7 +229,7 @@ li.dropdown.open .dropdownIndicator {
 }
 
 .top-nav .menu li a {
-	font-family: Montserrat;
+	font-family: Muli, sans-serif;
 	font-weight: 500;
 	color: #999;
 	font-size: 0.875em;
@@ -681,7 +682,7 @@ section.main-section {
 span.list-title {
 	display: inline-block;
 	margin-bottom: 25px;
-	font-family: Montserrat;
+	font-family: Muli, sans-serif;
 	font-weight: 700;
 	font-size: 1.375em;
 }
@@ -695,7 +696,7 @@ footer .container {
 }
 
 footer .copyright {
-	font-family: Montserrat;
+	font-family: Muli, sans-serif;
 	margin-bottom: 40px;
 }
 
@@ -734,9 +735,9 @@ a.back-to-top {
 	opacity: 0;
 	color: #111;
 	padding:10px 20px;
-	background: #fff;
+	/*background: #fff;*/
 	border-radius: 2px;
-	font-family: Montserrat;
+	font-family: Muli, sans-serif;
 	-webkit-transform: translateY(30px);
 	-ms-transform: translateY(30px);
 	-o-transform: translateY(30px);
@@ -774,7 +775,7 @@ input:focus {
 	margin-right: 20px;
 	color: #111;
 	font-size: 1.125em;
-	font-family: Montserrat;
+	font-family: Muli, sans-serif;
 }
 span.wpcf7-form-control-wrap {
 	width:100%;
@@ -812,7 +813,7 @@ span.wpcf7-form-control-wrap {
 
 
 .form-label {
-	font-family: Montserrat;
+	font-family: Muli, sans-serif;
 	font-weight: 700;
 	font-size: 1.125em;
 	color: #111;
@@ -1264,7 +1265,7 @@ ul#sidebar .widget ul li {
 ul#sidebar .widget ul li,
 ul#sidebar .widget ul li a {
 	color: rgba(255,255,255,.3);
-	font-family: Montserrat;
+	font-family: Muli, sans-serif;
 }
 
 ul#sidebar .widget ul li .comment-author-link {
