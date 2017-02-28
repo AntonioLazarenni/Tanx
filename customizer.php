@@ -8,7 +8,7 @@
 			
 		}
 		$font_primary_name = str_replace(' ', '+',$font_primary[0]['family']);
-		wp_enqueue_style('tanx_primary_google_font', '//fonts.googleapis.com/css?family=' . $font_primary_name . ':400,100,900italic,900,700,500italic,500,700italic,400italic,300italic,300,100italic');
+		wp_enqueue_style('tanx_primary_google_font', 'http://fonts.googleapis.com/css?family=' . $font_primary_name . ':400,100,900italic,900,700,500italic,500,700italic,400italic,300italic,300,100italic');
 
 
 		$font_secondary = ot_get_option('secondary_font' , 'Open Sans');
@@ -17,9 +17,10 @@
 			$font_secondary = array(array('family'=>$font_secondary));
 		}
 		$font_secondary_name = str_replace(' ', '+',$font_secondary[0]['family']);
-		wp_enqueue_style('tanx_secondary_google_font', '//fonts.googleapis.com/css?family=' . $font_secondary_name . ':400,100,900italic,900,700,500italic,500,700italic,400italic,300italic,300,100italic');
+		wp_enqueue_style('tanx_secondary_google_font', 'http://fonts.googleapis.com/css?family=' . $font_secondary_name . ':400,100,900italic,900,700,500italic,500,700italic,400italic,300italic,300,100italic');
 		
 		$custom_css = "
+		<style>
 			body {
 				font-size: " . ot_get_option('base_font_size') . "px;
 			}
@@ -170,7 +171,8 @@
 			}
 			p {
 				font-weight: " . ot_get_option('paragraph_font_weight') . ";
-			}";
+			}
+		</style>";
 		wp_add_inline_style('main', $custom_css);
 	}
 
