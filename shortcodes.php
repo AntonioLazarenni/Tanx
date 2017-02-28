@@ -1,7 +1,7 @@
 <?php 
 add_filter( 'the_content', 'remove_first_gallery' );
     function remove_first_gallery( $content ) {
-        if(get_post_format($post->ID) == "gallery") {
+        if(get_post_format(get_post()->ID) == "gallery") {
             $content = preg_replace('/\[gallery.*?\]/','',$content);
         }
         return $content;
