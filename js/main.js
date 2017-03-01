@@ -164,9 +164,9 @@ jQuery(function($) {
     });
 
     $('.searchform input#s').blur(function(){
-        // var input = $(this);
-        // input.parent().removeClass('active');
-        // input.parent().next().removeClass('active');
+        var input = $(this);
+        input.parent().removeClass('active');
+        input.parent().next().removeClass('active');
     });
 
     $('body').on('click', '.format-gallery .post-header .navigation a', function(event){
