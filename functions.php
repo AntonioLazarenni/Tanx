@@ -89,15 +89,20 @@ function tanx_register_required_plugins() {
 if ( ! isset( $content_width ) ) $content_width = 900;
 
 //Enqueue Styles and Scripts
-function tanx_enqueue_my_scripts() {
-    //Styles
-    wp_enqueue_style("bootstrap", get_template_directory_uri() . "/css/bootstrap.css");
+add_action( 'wp_enqueue_scripts', function() {
+    //Fonts
+    wp_enqueue_style('muli', '//fonts.googleapis.com/css?family=Muli');
+    wp_enqueue_style('merriweather', '//fonts.googleapis.com/css?family=Merriweather');
     wp_enqueue_style("simple-line-icons", get_template_directory_uri() . "/css/simple-line-icons.css");
     wp_enqueue_style("et-icons", get_template_directory_uri() . "/css/et-icons.css");
-    wp_enqueue_style("animate", get_template_directory_uri() . "/css/animate.css");
     wp_enqueue_style("font-awesome", 'https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css');
+    wp_enqueue_style("socicons", "//file.myfontastic.com/n6vo44Re5QaWo8oCKShBs7/icons.css");
+    wp_enqueue_style("icomoon", get_template_directory_uri() . ('/option-tree/assets/css/icomoon.css'));
+
+    //Styles    
+    wp_enqueue_style("bootstrap", get_template_directory_uri() . "/css/bootstrap.css");
+    wp_enqueue_style("animate", get_template_directory_uri() . "/css/animate.css");
     wp_enqueue_style("lightbox", get_template_directory_uri() . "/css/lightbox.css");
-    wp_enqueue_style("socicons", "http://file.myfontastic.com/n6vo44Re5QaWo8oCKShBs7/icons.css");
     wp_enqueue_style("social-fix", get_template_directory_uri() . "/css/social_fix.css");
     wp_enqueue_style("owl", get_template_directory_uri() . "/css/owl.css");
     wp_enqueue_style("main", get_template_directory_uri() . "/style.css");
@@ -111,8 +116,7 @@ function tanx_enqueue_my_scripts() {
     wp_enqueue_script("lightbox", get_template_directory_uri() . "/js/lightbox.js");
     wp_enqueue_script("wow", get_template_directory_uri() . "/js/wow.min.js");
     wp_enqueue_script("main", get_template_directory_uri() . "/js/main.js");
-}
-add_action( 'wp_head', 'tanx_enqueue_my_scripts');
+});
 
 function tanx_init_support() {
     add_theme_support( 'post-thumbnails' ); 
@@ -176,9 +180,9 @@ function is_edit_page($new_edit = null){
         return in_array( $pagenow, array( 'post.php', 'post-new.php' ) );
 }
 
-if(is_admin()) {
+add_action( 'admin_enqueue_scripts', function(){
     wp_enqueue_script('meta', get_template_directory_uri() . '/js/meta.js');
-}
+} );
 
 function tanx_register_portfolio_taxonomy() {
     $singular = 'Portfolio Category';
@@ -435,10 +439,10 @@ add_filter( 'wp_title', 'wpdocs_filter_wp_title', 10, 2 );
 
 // EXPERIMENTAL
 function register_pbs() {
-	if(function_exists('register_pb_widget')){
-	register_pb_widget("Header");
+    if(function_exists('register_pb_widget')){
+    register_pb_widget("Header");
     register_pb_widget("Button");
-	}
+    }
 
 }
 add_action('init', 'register_pbs');
