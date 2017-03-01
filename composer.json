@@ -1,9 +1,9 @@
 {
-    "name": "AntonioLazarenni/Tanx",
+    "name": "antonio-lazarenni/tanx",
     "repositories": [
         {
             "type": "wordpress-theme",
-            "url": "https://github.com/AntonioLazarenni/Tanx"
+            "url": "https://github.com/antonio-lazarenni/tanx"
         }
     ]
 }
