@@ -14,12 +14,12 @@
 				<?php include 'nav-searchform.php'; ?>
 			</div>
 		<?php } ?>
+		<div class="col-xs-6 <?php if(ot_get_option("sidebar_position") == 'leftPos') { echo "text-right nav-leftPos"; } ?>">
 		<?php if ( has_nav_menu( 'header-menu' ) ): ?>
-			<div class="col-xs-6 <?php if(ot_get_option("sidebar_position") == 'leftPos') { echo "text-right nav-leftPos"; } ?>">
 				<a href="#" class="expand-top-menu"><i class="arrow_down"></i></a>
 				<?php wp_nav_menu( array( 'theme_location' => 'header-menu', 'container_class' => 'header-menu-container', 'walker' => new wp_bootstrap_navwalker) ); ?>
-			</div>
 		<?php endif ?>
+		</div>
 		<?php if(ot_get_option("sidebar_position") == 'rightPos') { ?>
 			<div class="col-xs-6 text-right">
 				<?php include 'nav-searchform.php'; ?>
